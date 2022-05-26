@@ -21,15 +21,3 @@
   }
 }
 
-@-o-viewport{
-  width: extend-to-zoom;
-  zoom: 1.0;
-}
-@viewport{
-  width: extend-to-zoom;
-  zoom: 1.0;
-}
-@-ms-viewport{
-  width: extend-to-zoom;
-  zoom: 1.0;
-}

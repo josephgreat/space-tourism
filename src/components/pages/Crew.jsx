@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Crew() {
   return (
-    <div>Crew</div>
+    <div>Crew is here</div>
   )
 }

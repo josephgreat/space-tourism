@@ -4,27 +4,42 @@ import { Link as ReactLink } from "react-router-dom";
 
 export default function Home() {
   return (
-    <Box>
+    <Flex
+      direction={{ base: "column", lg: "row" }}
+      justifyContent={"space-between"}
+      alignItems={{md:"center", lg: "flex-start"}}
+      w={{ base: "100%", sm: "80%", md: "60%", lg: "80%" }}
+      mt={{ base: "3em", md: "4em", lg: "8em" }}
+      mx="auto"
+      pos={"relative"}
+    >
       <Flex
         direction={"column"}
-        alignItems="center"
+        alignItems={{ md: "center", lg: "flex-start" }}
         justifyContent={"space-between"}
         color="primary"
         textTransform={"uppercase"}
         fontSize="1em"
         fontFamily="Barlow Condensed"
-        my="3em"
-        textAlign={"center"}
+        mb={{ base: "3em", lg: "0" }}
+        textAlign={{ base: "center", lg: "left" }}
+        w={{lg: "40%"}}
       >
         <Heading
           as={"h4"}
           fontWeight="normal"
-          fontSize="1em"
+          fontSize={["1em", "1em", "1.25em"]}
           letterSpacing={"3px"}
         >
           so, you want to travel to
         </Heading>
-        <Heading as={"h1"} fontFamily="Bellefair" fontSize="4.5em" py=".3em">
+        <Heading
+          as={"h1"}
+          fontFamily="Bellefair"
+          fontSize={["4em", "4.5em", "9em"]}
+          py=".3em"
+          pb={{ md: "0" }}
+        >
           space
         </Heading>
         <Text textTransform={"none"} fontFamily="Barlow" lineHeight="25px">
@@ -37,21 +52,34 @@ export default function Home() {
       <Box
         backgroundColor={"#fff"}
         color={"#000"}
-        px="1.5em"
-        pt="3em"
-        w="150px"
-        height="150px"
+        w={{ base: "150px", md: "242px", lg: "274px"}}
+        h={{ base: "150px", md: "242px", lg: "274px" }}
         mx="auto"
-        pb="1.8em"
+        mt={{lg: "77px"}}
         borderRadius="full"
         textTransform="uppercase"
-        fontSize={"1.25em"}
+        fontSize={{ base: "1.25em", md: "2em" }}
         textAlign="center"
+        position="relative"
+        display={"inline-flex"}
+        justifyContent="center"
+        alignItems="center"
+        _before={{
+          content: '""',
+          backgroundColor: "rgba(255, 255, 255, .3)",
+          position: "absolute",
+          top: "-77px",
+          left:"-77px",
+          display: {base: "none", lg:'inline-block'},
+          borderRadius: "50%",
+          width: "418px",
+          height: "418px",
+        }}
       >
-        <Link as={ReactLink} to="/destination">
+        <Link as={ReactLink} to="/destination" display={"inline-block"}>
           Explore
         </Link>
       </Box>
-    </Box>
+    </Flex>
   );
 }

@@ -7,15 +7,16 @@ import wrapper from './components/Wrapper';
 
 function App() {
   let WrappedHomeComponent = wrapper(Home, "home"); 
-  let WrappedDestinationComponent = wrapper(Destination, "destination"); 
+  // let WrappedDestinationComponent = wrapper(Destination, "destination"); 
   return (
      <BrowserRouter>
       <Routes>
         <Route path='/' element={<WrappedHomeComponent/>} />
-        <Route path='/destination' element={<WrappedDestinationComponent/>} />
+        {/* <Route path='/' element={<WrappedDestinationComponent/>} /> */}
         <Route path='/crew' element={<Crew/>} />
-      </Routes>
+      // </Routes>
      </BrowserRouter>
+    // <p>App</p>
   );
 }
 
