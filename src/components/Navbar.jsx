@@ -9,7 +9,7 @@ function Navbar({ active }) {
   let navlinks = ["home", "destination", "crew", "technology"];
   const [navIsOpen, setNavIsOpen] = useState(false);
   return (
-    <Flex justifyContent={"space-between"} alignItems="center">
+    <Flex justifyContent={"space-between"} alignItems="center" >
       <Box width={"2.5em"} height="2.5em">
         <Logo />
       </Box>
@@ -36,11 +36,11 @@ function Navbar({ active }) {
         minHeight={[, "100vh", "auto"]}
         className="backdrop-blur"
         justifyContent={["", "", "space-between"]}
-    
         alignItems={["", "", "flex-end"]}
         py={{ base: "1.5em", md: "0" }}
         pl={["0", "0", "2.43em"]}
         pr={["0", "0", "1.5em"]}
+        zIndex="2"
       >
         <Box
           alignSelf={"flex-end"}
@@ -61,9 +61,9 @@ function Navbar({ active }) {
             px={["1.5em", "1.5em", "0"]}
             pb={["1.5em", "1.5em", "2em", "1.5em"]}
             display={"inline-block"}
-            borderRight={[, active === link && ".3em solid #fff", "none"]}
-            letterSpacing={".3em"}
-            fontSize={{ base: "0.875em", lg: "1.2em" }}
+            borderRight={{base: active === link && ".3em solid #fff", md: "none"}}
+            letterSpacing={".2em"}
+            fontSize={{ base: "0.875em", lg: "1.1em" }}
             fontWeight={"semi-bold"}
             wordSpacing={".2em"}
             key={index}
@@ -83,6 +83,7 @@ function Navbar({ active }) {
               width={"85%"}
               height={".2em"}
               background={"#fff"}
+              display={{base: "none", md: "inline-block"}}
               _groupHover={{bottom: "0"}}
               transition="all .3s ease"
             ></Box>
