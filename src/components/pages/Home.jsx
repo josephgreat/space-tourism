@@ -8,8 +8,9 @@ export default function Home() {
       direction={{ base: "column", lg: "row" }}
       justifyContent={"space-between"}
       alignItems={{md:"center", lg: "flex-start"}}
-      w={{ base: "100%", sm: "80%", md: "60%", lg: "80%" }}
+      w={{ base: "100%", sm: "80%", md: "60%", lg: "90%", xl: "80%" }}
       mt={{ base: "3em", md: "4em", lg: "8em" }}
+      mb={{lg: "2em"}}
       mx="auto"
       pos={"relative"}
     >
@@ -52,8 +53,8 @@ export default function Home() {
       <Box
         backgroundColor={"#fff"}
         color={"#000"}
-        w={{ base: "150px", md: "242px", lg: "274px"}}
-        h={{ base: "150px", md: "242px", lg: "274px" }}
+        w={{ base: "150px", md: "242px", lg: "240px", xl: "274px"}}
+        h={{ base: "150px", md: "242px", lg: "240px", xl: "274px"}}
         mx="auto"
         mt={{lg: "77px"}}
         borderRadius="full"
@@ -68,12 +69,12 @@ export default function Home() {
           content: '""',
           backgroundColor: "rgba(255, 255, 255, .3)",
           position: "absolute",
-          top: "-77px",
-          left:"-77px",
+          top: {lg: "-55px", xl: "-77px"},
+          left:{lg: "-55px", xl: "-77px"},
           display: {base: "none", lg:'inline-block'},
           borderRadius: "50%",
-          width: "418px",
-          height: "418px",
+          width: {lg: "350px", xl:"418px"},
+          height: {lg: "350px", xl:"418px"},
         }}
       >
         <Link as={ReactLink} to="/destination" display={"inline-block"}>

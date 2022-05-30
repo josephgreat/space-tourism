@@ -6,12 +6,18 @@ import {
   Img,
   List,
   ListItem,
+  Spinner,
   Text,
 } from "@chakra-ui/react";
 
 export default function Destination({ data, isLoading, hasError }) {
   const [destIndex, setDestIndex] = useState(0);
-  if (isLoading || data === undefined) return <div>Loading</div>;
+  if (isLoading || data === undefined)
+    return (
+      <div>
+        <Spinner />
+      </div>
+    );
   if (hasError) return <div>Error</div>;
   let { name, description, distance, travel, images } = data[destIndex];
   return (

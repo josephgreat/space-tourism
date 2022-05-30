@@ -48,7 +48,7 @@ export default function Crew({ data, isLoading, hasError }) {
           mt={{ base: "1.2em" }}
           order={{ base: 1, md: 2 }}
           h="100%"
-          maxH={"39em"}
+          maxH={"38em"}
         >
           <Img srcSet={`${images.webp}, ${images.png}`} w="100%" h="100%" />
         </Box>

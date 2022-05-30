@@ -24,7 +24,7 @@ function Navbar({ active }) {
       <Stack
         direction={{ base: "column", md: "row" }}
         width={{ base: navIsOpen ? "15em" : "0", md: "30em", lg: "58%" }}
-        height={["100vh", "100vh", "5em"]}
+        height={{md: "5em"}}
         overflow={"clip"}
         pos={{ base: "absolute", md: "unset" }}
         top="0"
@@ -33,7 +33,7 @@ function Navbar({ active }) {
         transition={"all .3s ease"}
         backgroundColor={"rgba(255,255,255,.1)"}
         backdropFilter="blur(1.5em)"
-        minHeight={[, "100vh", "auto"]}
+        minHeight={{base: "100vh", md: "auto"}}
         className="backdrop-blur"
         justifyContent={["", "", "space-between"]}
         alignItems={["", "", "flex-end"]}
