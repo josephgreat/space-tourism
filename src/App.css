@@ -21,3 +21,10 @@
   }
 }
 
+/* animations */
+@keyframes slideIn {
+  from{top: 2em; opacity: .3;}
+  to{top: 0; opacity: 1;}
+}
+
+

@@ -15,13 +15,13 @@ export default function Destination({ data, isLoading, hasError }) {
   if (isLoading || data === undefined)
     return (
       <div>
-        <Spinner />
+        <Spinner color="#D0D6F9" thickness=".4em" speed=".7s" size={"xl"} />
       </div>
     );
   if (hasError) return <div>Error</div>;
   let { name, description, distance, travel, images } = data[destIndex];
   return (
-    <Box textTransform={"uppercase"} w={{ lg: "85%" }} mx={{ lg: "auto" }}>
+    <Box textTransform={"uppercase"} w={{ lg: "85%" }} mx={{ lg: "auto" }} animation="slideIn .7s ease .1s running" position="relative">
       <Heading
         as={"h3"}
         fontSize={{ base: "1em", md: "1.25em", lg: "1.75em" }}

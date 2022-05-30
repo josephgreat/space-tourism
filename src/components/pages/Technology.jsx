@@ -6,14 +6,19 @@ import {
   Img,
   List,
   ListItem,
+  Spinner,
   Text,
 } from "@chakra-ui/react";
 
 export default function Technology({data, isLoading, hasError, screenSize}) {
     const [techIndex, setTechIndex] = useState(0);
-    if (isLoading || data === undefined) return <div>Loading</div>;
+    if (isLoading || data === undefined)
+    return (
+      <div>
+        <Spinner color="#D0D6F9" thickness=".4em" speed=".7s" size={"xl"} />
+      </div>
+    );
     if (hasError) return <div>Error</div>;
-    console.log(screenSize);
     let { name, description, images } = data[techIndex];
     return (
       <Box
@@ -21,6 +26,8 @@ export default function Technology({data, isLoading, hasError, screenSize}) {
         w={{ lg: "85%" }}
         mx={{ lg: "auto" }}
         mb={{ base: "3em" }}
+      animation="slideIn .7s ease .1s running" position="relative"
+        
       >
         <Heading
           as={"h3"}

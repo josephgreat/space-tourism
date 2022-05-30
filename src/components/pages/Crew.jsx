@@ -6,12 +6,18 @@ import {
   Img,
   List,
   ListItem,
+  Spinner,
   Text,
 } from "@chakra-ui/react";
 
 export default function Crew({ data, isLoading, hasError }) {
   const [crewIndex, setCrewIndex] = useState(0);
-  if (isLoading || data === undefined) return <div>Loading</div>;
+  if (isLoading || data === undefined)
+    return (
+      <div>
+        <Spinner color="#D0D6F9" thickness=".4em" speed=".7s" size={"xl"} />
+      </div>
+    );
   if (hasError) return <div>Error</div>;
   let { name, bio, role, images } = data[crewIndex];
   return (
@@ -20,8 +26,8 @@ export default function Crew({ data, isLoading, hasError }) {
       w={{ lg: "85%" }}
       mx={{ lg: "auto" }}
       mb={{ base: "3em" }}
-      position={{lg: "relative"}}
       overflow="hidden"
+      animation="slideIn .7s ease .1s" position="relative" 
     >
       <Heading
         as={"h3"}
