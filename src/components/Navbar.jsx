@@ -70,7 +70,7 @@ function Navbar({ active }) {
             position="relative"
             onClick={() => setNavIsOpen(false)}
             className="group"
-            _hover={[,{pb:"1.8em", textDecoration:"none"}]}
+            _hover={[{pb:"1.8em", textDecoration:"none"}]}
             >
             <Text as={"span"} p="0" display={[, "inline", "none", "inline"]}>
               0{index + 1}
