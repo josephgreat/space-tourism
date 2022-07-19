@@ -16,7 +16,7 @@ import wrapper from './components/Wrapper';
 
 function App() {
   const [data, setData] = useState({});
-  const [screenSize, setScreenSize] = useState("desktop");
+  const [screenSize, setScreenSize] = useState("mobile");
   const [isLoading, setIsloading] = useState(false);
   const [hasError, setHasError] = useState(null);
   let fetchApi = async () => {
@@ -45,15 +45,7 @@ function App() {
       fetchApi();
       checkScreenSize()
     });
-    window.addEventListener("resize", checkScreenSize);
-    return () => {
-      window.removeEventListener("load", () => {
-        fetchApi();
-        checkScreenSize()
-      });
-      window.removeEventListener("resize", checkScreenSize);
-      window.removeEventListener("load", fetchApi);
-    };
+    window.addEventListener("resize", checkScreenSize); 
   }, []);
 
   let WrappedHomeComponent = wrapper(Home, "home", screenSize);
