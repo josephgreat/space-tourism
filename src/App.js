@@ -45,7 +45,15 @@ function App() {
       fetchApi();
       checkScreenSize()
     });
-    window.addEventListener("resize", checkScreenSize); 
+    window.addEventListener("resize", checkScreenSize);
+    return () => {
+      window.removeEventListener("load", () => {
+        fetchApi();
+        checkScreenSize()
+      });
+      window.removeEventListener("resize", checkScreenSize);
+      window.removeEventListener("load", fetchApi);
+    };
   }, []);
 
   let WrappedHomeComponent = wrapper(Home, "home", screenSize);
