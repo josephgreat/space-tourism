@@ -12,13 +12,7 @@ import {
 
 export default function Destination({ data, isLoading, hasError }) {
   const [destIndex, setDestIndex] = useState(0);
-  if (isLoading || data === undefined)
-    return (
-      <div>
-        <Spinner color="#D0D6F9" thickness=".4em" speed=".7s" size={"xl"} />
-      </div>
-    );
-  if (hasError) return <div>Error</div>;
+
   let { name, description, distance, travel, images } = data[destIndex];
   return (
     <Box textTransform={"uppercase"} w={{ lg: "85%" }} mx={{ lg: "auto" }} animation="slideIn .7s ease .1s running" position="relative">

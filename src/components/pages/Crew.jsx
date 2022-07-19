@@ -12,13 +12,7 @@ import {
 
 export default function Crew({ data, isLoading, hasError }) {
   const [crewIndex, setCrewIndex] = useState(0);
-  if (isLoading || data === undefined)
-    return (
-      <div>
-        <Spinner color="#D0D6F9" thickness=".4em" speed=".7s" size={"xl"} />
-      </div>
-    );
-  if (hasError) return <div>Error</div>;
+
   let { name, bio, role, images } = data[crewIndex];
   return (
     <Box

@@ -3,10 +3,9 @@ import { Container } from "@chakra-ui/react";
 import Navbar from "./Navbar";
 const wrapper = (Component, title,  screenSize, data, isLoading, hasError) => {
   function Wrapper(props) {
-
-    let componentData = data[`${title}`];
+    let componentData;
+    if(title !== "home") componentData = data[`${title}`];
    
-    console.log(componentData);
 
     let checkPage = () => {
       if(title === "home")  return <Component {...props} />

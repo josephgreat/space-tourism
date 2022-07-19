@@ -12,13 +12,7 @@ import {
 
 export default function Technology({data, isLoading, hasError, screenSize}) {
     const [techIndex, setTechIndex] = useState(0);
-    if (isLoading || data === undefined)
-    return (
-      <div>
-        <Spinner color="#D0D6F9" thickness=".4em" speed=".7s" size={"xl"} />
-      </div>
-    );
-    if (hasError) return <div>Error</div>;
+    
     let { name, description, images } = data[techIndex];
     return (
       <Box
